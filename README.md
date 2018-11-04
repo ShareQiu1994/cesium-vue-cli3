@@ -24,5 +24,7 @@ npm run build
 localhost:8080
 ```
 
+邮箱：421419567@qq.com 请右上角Star 万分感激!(^_^)
+
 
 
