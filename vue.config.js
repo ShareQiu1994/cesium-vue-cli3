@@ -7,6 +7,10 @@ const cesiumWorkers = '../Build/Cesium/Workers';
 module.exports = {
     baseUrl:'./',
     assetsDir:'./static',
+    productionSourceMap:false,
+    devServer:{
+        open: true,
+    },
     chainWebpack: config => {
         config
           .node.set('fs', 'empty').end()
