@@ -47,12 +47,6 @@ module.exports = {
                     new CopyWebpackPlugin([ { from: path.join(cesiumSource, cesiumWorkers), to: 'static/Workers' } ]),
                     new CopyWebpackPlugin([ { from: path.join(cesiumSource, 'Assets'), to: 'static/Assets' } ]),
                     new CopyWebpackPlugin([ { from: path.join(cesiumSource, 'Widgets'), to: 'static/Widgets' } ]), 
-                    // new webpack.optimize.CommonsChunkPlugin({
-                    //     name: 'cesium',
-                    //     minChunks: function (module) {
-                    //       return module.context && module.context.indexOf('cesium') !== -1
-                    //     }
-                    //   })
                 ]
         } else {
                 plugins = [
@@ -64,25 +58,7 @@ module.exports = {
                     new CopyWebpackPlugin([ { from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' } ]),
                 ]
         }
-
         return {
-            // module:{
-            //     unknownContextCritical: false 
-            // },
-            // resolve: {
-            //     alias: {
-            //         cesium: path.resolve(__dirname, cesiumSource)
-            //     }
-            // },
-            // output: {
-            //     sourcePrefix: ''
-            // },
-            // amd: {
-            //     toUrlUndefined: true
-            // },
-            // node: {
-            //     fs: 'empty'
-            // },
             plugins:plugins
         }
       } 
