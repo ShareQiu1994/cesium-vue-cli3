@@ -41,6 +41,9 @@ module.exports = {
         let plugins = [];
         if (process.env.NODE_ENV === 'production') {
                 plugins =  [
+                    new webpack.ProvidePlugin({ 
+                          Cesium:'cesium/Cesium', 
+                    }),
                     new webpack.DefinePlugin({
                       'CESIUM_BASE_URL': JSON.stringify('static') 
                     }),
@@ -50,6 +53,9 @@ module.exports = {
                 ]
         } else {
                 plugins = [
+                    new webpack.ProvidePlugin({ 
+                          Cesium:'cesium/Cesium', 
+                    }),
                     new webpack.DefinePlugin({
                       'CESIUM_BASE_URL': JSON.stringify('') 
                     }),
@@ -59,6 +65,24 @@ module.exports = {
                 ]
         }
         return {
+            entry:{
+              Cesium:'cesium/Cesium' 
+            }, 
+            output:{
+              filename:'static/js/[name].bundle.js' //打包的文件名
+            },
+            //optimization 提取JS
+            optimization:{
+              splitChunks:{
+                cacheGroups:{
+                    vendor:{
+                      chunks:'initial',
+                      name:'Cesium', //单独提取jquery 必须在entry中配置
+                      enforce:true
+                    }
+                }
+              }
+            },
             plugins:plugins
         }
       } 
