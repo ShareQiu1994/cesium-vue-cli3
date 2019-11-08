@@ -5,7 +5,7 @@ const cesiumSource = 'node_modules/cesium/Source';
 const cesiumWorkers = '../Build/Cesium/Workers'; 
 
 module.exports = {
-    baseUrl:'./',
+    publicPath:'./',
     assetsDir:'./static',
     productionSourceMap:false,
     devServer:{
