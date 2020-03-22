@@ -1,5 +1,7 @@
 # cesium-vue(基于vuecli3.x)
 
+> 该库已经存档并停止维护 推介使用最新的库vuecli4.x+ [https://github.com/ShareQiu1994/cesium-vue](https://github.com/ShareQiu1994/cesium-vue)
+
 > 一个整合了Cesium的VueCli3.x的脚手架工具
 
 1.项目为VueCli+Cesium的纯净版，除了VueCli自带的模块和Cesium模块，没有引入其他第三方模块。
